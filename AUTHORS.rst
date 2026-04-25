@@ -23,8 +23,16 @@
 
 
 =================================
-LibEVM manuals authors
+EVM Wallet manuals authors
 =================================
 
-* Pellegrino Prevete <pellegrinoprevete@gmail.com>
-* Truocolo <truocolo@aol.com>
+* Pellegrino Prevete
+  * eth-mail
+      <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
+  * e-mail
+      <pellegrinoprevete@gmail.com>
+* Truocolo
+  * eth-mail
+      <truocolo@0x6E5163fC4BFc1511Dbe06bB605cc14a3e462332b>
+  * e-mail
+      <truocolo@aol.com>
