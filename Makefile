@@ -20,10 +20,11 @@
 #    License along with this program.
 #    If not, see <https://www.gnu.org/licenses/>.
 
-_PROJECT=encoding-tools
+_PROJECT_NPM=libevm
+_PROJECT=$(_PROJECT_NPM).js
 PREFIX ?= /usr/local
-DOC_DIR=$(DESTDIR)$(PREFIX)/share/doc/$(_PROJECT)
-DATA_DIR=$(DESTDIR)$(PREFIX)/share/$(_PROJECT)
+DOC_DIR=$(DESTDIR)$(PREFIX)/share/doc/$(_PROJECT_NPM)
+DATA_DIR=$(DESTDIR)$(PREFIX)/share/$(_PROJECT_NPM)
 MAN_DIR?=$(DESTDIR)$(PREFIX)/share/man
 
 MAN_FILES=\
@@ -62,10 +63,10 @@ install-man:
 	$(INSTALL_DIR) \
 	  "$(MAN_DIR)/man1"
 	rst2man \
-	  "bin2txt.1.rst" \
-	  "$(MAN_DIR)/man1/bin2txt.1"
+	  "$(_PROJECT_NPM).1.rst" \
+	  "$(MAN_DIR)/man1/$(_PROJECT_NPM).1"
 	rst2man \
-	  "txt2bin.1.rst" \
-	  "$(MAN_DIR)/man1/txt2bin.1"
+	  "$(_PROJECT_NPM)-js.1.rst" \
+	  "$(MAN_DIR)/man1/$(_PROJECT_NPM)-js.1"
 
 .PHONY: install install-doc install-man

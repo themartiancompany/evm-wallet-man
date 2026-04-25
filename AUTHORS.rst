@@ -23,7 +23,7 @@
 
 
 =================================
-Encoding Tools manuals authors
+LibEVM manuals authors
 =================================
 
 * Pellegrino Prevete <pellegrinoprevete@gmail.com>
