@@ -66,7 +66,7 @@ install-man:
 	  "$(_PROJECT_NPM).1.rst" \
 	  "$(MAN_DIR)/man1/$(_PROJECT_NPM).1"
 	rst2man \
-	  "$(_PROJECT_NPM)-js.1.rst" \
-	  "$(MAN_DIR)/man1/$(_PROJECT_NPM)-js.1"
+	  "$(_PROJECT_NPM).js.1.rst" \
+	  "$(MAN_DIR)/man1/$(_PROJECT_NPM).js.1"
 
 .PHONY: install install-doc install-man
