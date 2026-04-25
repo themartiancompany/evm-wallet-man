@@ -20,11 +20,11 @@
 #    License along with this program.
 #    If not, see <https://www.gnu.org/licenses/>.
 
-_PROJECT_NPM=libevm
-_PROJECT=$(_PROJECT_NPM).js
+_PROJECT=evm-wallet
+_PROJECT_NPM=$(_PROJECT).js
 PREFIX ?= /usr/local
-DOC_DIR=$(DESTDIR)$(PREFIX)/share/doc/$(_PROJECT_NPM)
-DATA_DIR=$(DESTDIR)$(PREFIX)/share/$(_PROJECT_NPM)
+DOC_DIR=$(DESTDIR)$(PREFIX)/share/doc/$(_PROJECT)
+DATA_DIR=$(DESTDIR)$(PREFIX)/share/$(_PROJECT)
 MAN_DIR?=$(DESTDIR)$(PREFIX)/share/man
 
 MAN_FILES=\
@@ -65,8 +65,5 @@ install-man:
 	rst2man \
 	  "$(_PROJECT_NPM).1.rst" \
 	  "$(MAN_DIR)/man1/$(_PROJECT_NPM).1"
-	rst2man \
-	  "$(_PROJECT_NPM).js.1.rst" \
-	  "$(MAN_DIR)/man1/$(_PROJECT_NPM).js.1"
 
 .PHONY: install install-doc install-man
