@@ -129,8 +129,8 @@ Network options
 -n network              EVM network name. Accepted values
                         are all those supported by
                         evm-chains-info and RPC addresses.
--R rpc-selection        RPC selection method.
--S explorer-selection   Network explorer selection method.
+-S rpc-selection        RPC selection method.
+-E explorer-selection   Network explorer selection method.
 -r retries-max          Maximum number of retries before
                         failing.
 
@@ -142,6 +142,8 @@ Credentials options
 -p wallet-password      Wallet password.
 -s wallet-seed          Wallet seed path.
 -k api-key              Etherscan-like service key.
+-Q <y/n>                Quantum-resistant ciphers
+                        support.
 
 
 Application options
