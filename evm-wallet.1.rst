@@ -105,53 +105,68 @@ well as direct RPC addresses.
 Options
 ========
 
--u measure-unit         Measure unit for the transaction
-                        value. It can be 'ether' or 'wei'.
--l balance-lifespan     Maximum threshold in seconds
-                        from now after which to consider
-                        balance to be outdated.
--a                      Operation valid for all available
-                        networks.
--P tasks-parallel       Tasks to perform in parallel.
+
+-u measure-unit, --measure-unit measure-unit             Measure unit for the transaction
+                                                         value. It can be 'ether' or 'wei'
+
+-l balance-lifespan, --balance-lifespan seconds          Maximum threshold in seconds
+                                                         from now after which to consider
+                                                         balance to be outdated.
+
+-a, --all-networks                                       Operation valid for all available
+                                                         networks.
+-P tasks-parallel, --tasks-parallel integer              Tasks to perform in parallel.
 
 
 List options
 ==============
 
--o output-type          Output type for the list option.
-                        It can be 'name', 'address',
-                        'fingerprint'.
+-o output-type, --output-type output-type                Output type for the list option.
+                                                         It can be 'name', 'address',
+                                                         'fingerprint'.
 
 
 Network options
 ================
 
--n network              EVM network name. Accepted values
-                        are all those supported by
-                        evm-chains-info and RPC addresses.
--S rpc-selection        RPC selection method.
--E explorer-selection   Network explorer selection method.
--r retries-max          Maximum number of retries before
-                        failing.
+-n network, --network network                            EVM network name. Accepted values
+                                                         are all those supported by
+                                                         evm-chains-info and RPC addresses.
+
+-S rpc-selection, --rpc-selection rpc-selection          RPC selection method.
+
+-E explorer-selection, --explorer-selection criterion    Network explorer selection method.
+                                                         See 'evm-chains-info' manual page for
+                                                         details.
+
+-r retries-max, --retries-max retries-max                Maximum number of retries before
+                                                         failing.
 
 
 Credentials options
 =====================
 
--w wallet-path          Wallet path.
--p wallet-password      Wallet password.
--s wallet-seed          Wallet seed path.
--k api-key              Etherscan-like service key.
--Q <y/n>                Quantum-resistant ciphers
-                        support.
+-w wallet-path, --wallet-path wallet-path                Wallet path.
+
+-p wallet-password, --wallet-password wallet-password    Wallet password.
+
+-s wallet-seed, --wallet-seed wallet-seed                Wallet seed path.
+
+-k api-key, --api-key api-key                            Etherscan-like service key.
+
+-Q <y/n>, --qr-support <y/n>                             Quantum-resistant ciphers
+                                                         support.
 
 
 Application options
 =====================
 
--h                      This message.
--c                      Enable color output
--v                      Enable verbose output
+-h, --help                                               This message.
+
+-c, --color                                              Enable color output. Only in the
+                                                         Bash implementation.
+
+-v, --verbose                                            Enable verbose output
 
 
 Bugs
@@ -169,6 +184,8 @@ Copyright Pellegrino Prevete. AGPL-3.0.
 See also
 ========
 
+* erc20-token-send
+* gas-transfer
 * mkseed
 * ether2wei
 * evm-chains-info
