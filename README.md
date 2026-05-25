@@ -24,7 +24,7 @@
 [comment]: <> (with this program.)
 [comment]: <> (If not, see <https://www.gnu.org/licenses/>.)
 
-# LibEVM manual
+# EVM Wallet manual
 
 The [EVM Wallet](
   https://github.com/themartiancompany/evm-wallet)
