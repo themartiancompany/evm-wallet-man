@@ -27,9 +27,9 @@
    If not, see <https://www.gnu.org/licenses/>.
 
 
-==============
+============
 gas-transfer
-==============
+============
 
 
 ---------------------------------------------------------
@@ -51,7 +51,7 @@ Description
 Transfer gas from an address to another.
 
 Arguments
-=======
+=========
 
 * *quiet*
 
@@ -92,7 +92,7 @@ Arguments
 
 
 Options
-========
+=======
 
 -h, --help              This message.
 -v, --verbose           Enable verbose output
