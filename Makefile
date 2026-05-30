@@ -55,6 +55,9 @@ build-man:
 	mkdir \
 	  -p \
 	  "build"
+	cp \
+	  "variables.rst" \
+	  "build"
 	if [[ "$(_NPM)" == "true" ]]; then \
 	  sed \
 	    "s/$(_PROJECT)/$(_PROJECT_NPM)/g" \
@@ -87,9 +90,11 @@ install-man:
 
 	if [[ ! -d "build" ]]; then \
 	  make \
-	    build-man
+	    build-man; \
 	fi
-	for _file in "build/"*; do \
+	cd \
+	  "build"; \
+	for _file in "./"*; do \
 	  $(_INSTALL_FILE) \
 	    "$${_file}" \
 	    "$(MAN_DIR)/man1/$${_file}"; \
