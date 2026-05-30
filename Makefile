@@ -26,6 +26,7 @@
 
 _PROJECT=evm-wallet
 _PROJECT_NPM=$(_PROJECT).js
+_NPM ?= true
 PREFIX ?= /usr/local
 DOC_DIR=$(DESTDIR)$(PREFIX)/share/doc/$(_PROJECT)
 DATA_DIR=$(DESTDIR)$(PREFIX)/share/$(_PROJECT)
@@ -54,19 +55,21 @@ build-man:
 	mkdir \
 	  -p \
 	  "build"
-	sed \
-	  "s/$(_PROJECT)/$(_PROJECT_NPM)/g" \
-	  "$(_PROJECT).1.rst" > \
-	  "build/$(_PROJECT_NPM).1.rst"
+	if [[ "$(_NPM)" == "true" ]]; then \
+	  sed \
+	    "s/$(_PROJECT)/$(_PROJECT_NPM)/g" \
+	    "$(_PROJECT).1.rst" > \
+	    "build/$(_PROJECT_NPM).1.rst"; \
+	  rst2man \
+	    "build/$(_PROJECT_NPM).1.rst" \
+	    "build/$(_PROJECT_NPM).1"; \
+	  rm \
+	  "build/$(_PROJECT_NPM).1.rst"; \
+	fi
 	rst2man \
 	  "$(_PROJECT).1.rst" \
 	  "build/$(_PROJECT).1"
-	rst2man \
-	  "build/$(_PROJECT_NPM).1.rst" \
-	  "build/$(_PROJECT_NPM).1"
-	rm \
-	  "build/$(_PROJECT_NPM).1.rst"
-
+	
 install: install-doc install-man
 
 install-doc:
