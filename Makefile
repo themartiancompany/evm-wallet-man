@@ -60,7 +60,7 @@ build-man:
 	  "variables.rst" \
 	  "build"
 	sed \
-	  "s/insert.version.here/$(_TAG)/" \
+	  "s/insert.version.here/$(_TAG)/g" \
 	  -i \
 	  "build/variables.rst"; \
 	if [[ "$(_NPM)" == "true" ]]; then \
