@@ -51,7 +51,7 @@ Description
 Returns current block number for a blockchain network.
 
 Arguments
-=======
+=========
 
 * *quiet*
 
