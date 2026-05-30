@@ -24,7 +24,7 @@
 #    along with this program.
 #    If not, see <https://www.gnu.org/licenses/>.
 
-_TAG ?= insert.version.here
+_VERSION ?= insert.version.here
 _PROJECT=evm-wallet
 _PROJECT_NPM=$(_PROJECT).js
 _NPM ?= true
@@ -60,7 +60,7 @@ build-man:
 	  "variables.rst" \
 	  "build"
 	sed \
-	  "s/insert.version.here/$(_TAG)/g" \
+	  "s/insert.version.here/$(_VERSION)/g" \
 	  -i \
 	  "build/variables.rst"; \
 	if [[ "$(_NPM)" == "true" ]]; then \
