@@ -34,6 +34,7 @@ evm-wallet
 -----------------------------------------------------------
 Ethereum Virtual Machine (EVM) compatible networks' wallet
 -----------------------------------------------------------
+
 :Version: evm-wallet |version|
 :Manual section: 1
 
@@ -46,12 +47,14 @@ evm-wallet *[options]* *command* *[command-args]*
 
 Description
 ===========
+
 Ethereum Virtual Machine (EVM) compatible
 networks' cryptocurrency wallet.
 
 
 Commands
 =========
+
 * get  *wallet-name*  *key*
 
   Retrieves information about specific items of single wallets.
@@ -104,7 +107,6 @@ well as direct RPC addresses.
 
 Options
 ========
-
 
 -u measure-unit, --measure-unit measure-unit             Measure unit for the transaction
                                                          value. It can be 'ether' or 'wei'
@@ -184,6 +186,7 @@ Copyright Pellegrino Prevete. AGPL-3.0.
 See also
 ========
 
+* eoa-fingerprint
 * erc20-token-send
 * gas-transfer
 * mkseed

@@ -33,7 +33,7 @@ DATA_DIR=$(DESTDIR)$(PREFIX)/share/$(_PROJECT)
 MAN_DIR?=$(DESTDIR)$(PREFIX)/share/man
 
 MAN_FILES=\
-  $(wildcard *1.rst)
+  $(wildcard *.1.rst)
 
 DOCS_FILES=\
   $(wildcard *.md)
@@ -69,9 +69,14 @@ build-man:
 	  rm \
 	  "build/$(_PROJECT_NPM).1.rst"; \
 	fi
-	rst2man \
-	  "$(_PROJECT).1.rst" \
-	  "build/$(_PROJECT).1"
+	for _file in $(MAN_FILES); do \
+	  _program="$( \
+	    basename \
+	      "$${_file%%*.1.rst}")"; \
+	  rst2man \
+	    "$${_file}" \
+	    "build/$${_program}.1"; \
+	done
 	
 install: install-doc install-man
 
