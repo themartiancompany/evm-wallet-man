@@ -49,6 +49,24 @@ _INSTALL_DIR=\
 
 all:
 
+build-man:
+
+	mkdir \
+	  -p \
+	  "build"
+	sed \
+	  "s/$(_PROJECT)/$(_PROJECT_NPM)/g" \
+	  "$(_PROJECT).1.rst" > \
+	  "build/$(_PROJECT_NPM).1.rst"
+	rst2man \
+	  "$(_PROJECT).1.rst" \
+	  "build/$(_PROJECT).1"
+	rst2man \
+	  "build/$(_PROJECT_NPM).1.rst" \
+	  "build/$(_PROJECT_NPM).1"
+	rm \
+	  "build/$(_PROJECT_NPM).1.rst"
+
 install: install-doc install-man
 
 install-doc:
@@ -64,10 +82,14 @@ install-doc:
 
 install-man:
 
-	$(INSTALL_DIR) \
-	  "$(MAN_DIR)/man1"
-	rst2man \
-	  "$(_PROJECT_NPM).1.rst" \
-	  "$(MAN_DIR)/man1/$(_PROJECT_NPM).1"
+	if [[ ! -d "build" ]]; then \
+	  make \
+	    build-man
+	fi
+	for _file in "build/"*; do \
+	  $(_INSTALL_FILE) \
+	    "$${_file}" \
+	    "$(MAN_DIR)/man1/$${_file}"; \
+	done
 
 .PHONY: install install-doc install-man
